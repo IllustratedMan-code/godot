@@ -1,0 +1,25 @@
+From 920d821f67c04086d52933ca5c18f0c4089f83ca Mon Sep 17 00:00:00 2001
+From: David Lewis <davidalewis00@gmail.com>
+Date: Fri, 22 Apr 2022 10:22:38 -0400
+Subject: [PATCH 2/3] added glu
+
+---
+ platform/linuxbsd/detect.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/platform/linuxbsd/detect.py b/platform/linuxbsd/detect.py
+index 8be6053a08..53bb925476 100644
+--- a/platform/linuxbsd/detect.py
++++ b/platform/linuxbsd/detect.py
+@@ -227,6 +227,8 @@ def configure(env):
+     env.ParseConfig("pkg-config xrender --cflags --libs")
+     env.ParseConfig("pkg-config xi --cflags --libs")
+     env.ParseConfig("pkg-config xfixes --cflags")
++    env.ParseConfig("pkg-config glu --cflags")
++
+ 
+     if env["touch"]:
+         env.Append(CPPDEFINES=["TOUCH_ENABLED"])
+-- 
+2.35.1
+
